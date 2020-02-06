@@ -1,17 +1,14 @@
-package interview;
-
-import java.util.Vector;
+package interview.domain;
 
 public class Client {
-	private String name;
-	String licenseNumber;
-	private String cd;
-	private Vector records;
+	private final String name;
+	private final String licenseNumber;
+//	private final String cd;//Removed
+//	private final List<HireRecord> records = new ArrayList<>(); //Removed
 
 	public Client(String name, String licenseNumber, String cd) {
 		this.name = name;
 		this.licenseNumber = licenseNumber;
-		this.cd = cd;
 	}
 
 	public String getName() {
@@ -22,24 +19,11 @@ public class Client {
 		return licenseNumber;
 	}
 
-	public String getCd() {
-		return cd;
-	}
-
-	public Vector getRecords() {
-		return records;
-	}
-
-	public void addHirerecrd(HireRecord r) {
-		if(records == null) {
-			records = new Vector();
-		}
-		records.add(r);
-	}
-
 	@Override
 	public String toString() {
-		return name + licenseNumber;
+		return "Client{" +
+				"name='" + name + '\'' +
+				", licenseNumber='" + licenseNumber + '\'' +
+				'}';
 	}
-
 }
